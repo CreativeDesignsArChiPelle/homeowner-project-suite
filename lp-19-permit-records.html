@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Built on county permit records, not national averages &mdash; QuoteCheck</title>
+<meta name="description" content="Every permit carries a declared project valuation. We turn thousands of them into your local range.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuoteCheck">
+<meta property="og:title" content="Built on county permit records, not national averages">
+<meta property="og:description" content="Every permit carries a declared project valuation. We turn thousands of them into your local range.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Built on county permit records, not national averages">
+<meta name="twitter:description" content="Every permit carries a declared project valuation. We turn thousands of them into your local range.">
+<script>
+var GOOGLE_ADS_ID = 'AW-REPLACE_ME';
+var CONVERSION_LABEL = 'REPLACE_ME';
+var SHEETS_WEBHOOK_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-REPLACE_ME"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', GOOGLE_ADS_ID);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/lqt7xzs.css">
+<style>*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+:root{--paper:#F7F7F4;--ink:#14252B;--muted:#556260;--rule:#D9D9D1;--band:#E3E8E4;--accent:#0F6A5A;--flag:#B4451F;--field:#fff;--card:#ECF3F1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#111A1C;--ink:#E9EDEA;--muted:#96A19E;--rule:#2A3739;--band:#1D2A2C;--accent:#5FC3AA;--flag:#E08B62;--field:#182324;--card:#16262A}}
+:root[data-theme="dark"]{--paper:#111A1C;--ink:#E9EDEA;--muted:#96A19E;--rule:#2A3739;--band:#1D2A2C;--accent:#5FC3AA;--flag:#E08B62;--field:#182324;--card:#16262A}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.55;font-variant-numeric:tabular-nums;position:relative}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--flag));z-index:10}
+.hero-wrap{max-width:1040px;margin:0 auto;padding:0 24px 60px}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+header{padding:32px 0 0}
+.markrow{display:flex;align-items:center;gap:11px}
+.icon-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:var(--card);color:var(--accent);flex:none}
+.icon-badge svg{width:19px;height:19px}
+.mark{font-weight:700;letter-spacing:-.01em;font-size:17px}.mark span{color:var(--accent)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:42px 0 10px}
+h1{font-family:"essonnes-headline",Georgia,"Times New Roman",serif;font-size:clamp(30px,5vw,48px);line-height:1.1;font-weight:700;letter-spacing:-.012em;margin:0 0 16px;max-width:none}
+.sub{font-size:19px;color:var(--muted);margin:0 0 8px;max-width:none}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:34px;margin-top:34px;align-items:stretch}
+.hero-left{display:flex;flex-direction:column}
+@media (min-width:760px){.hero-grid{grid-template-columns:1.05fr 1fr;gap:52px}}
+.trustbar{display:flex;flex-wrap:wrap;gap:9px 22px;margin:0 0 32px;padding:14px 18px;background:var(--card);border-radius:10px}
+.trustbar div{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--muted);font-weight:500}
+.trustbar svg{width:15px;height:15px;color:var(--accent);flex:none}
+.illustration{display:flex;justify-content:center;margin-bottom:24px}
+.illustration svg{width:164px;height:164px}
+.illust-bg{fill:var(--card)}
+.illust-doc,.illust-tab,.illust-bar,.illust-house,.illust-coin{fill:var(--field);stroke:var(--accent);stroke-width:3}
+.illust-dollar{font-family:Archivo,sans-serif;font-weight:700;font-size:34px;fill:var(--accent)}
+.illust-line{stroke:var(--rule);stroke-width:4;stroke-linecap:round}
+.illust-glass{fill:var(--paper);stroke:var(--accent);stroke-width:4}
+.illust-handle{stroke:var(--accent);stroke-width:5;stroke-linecap:round}
+.illust-check{stroke:var(--flag);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.spread{border:1px solid var(--rule);border-radius:14px;padding:32px 28px 30px;margin-bottom:0;background:var(--card);box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.spread h2{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 20px}
+.sample-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--field);border:1px solid var(--rule);padding:3px 9px;border-radius:6px;margin-bottom:12px}
+.quotes{display:flex;flex-wrap:wrap;gap:26px;margin-bottom:26px}
+.q{flex:1 1 120px;min-width:110px}.q .n{font-size:26px;font-weight:700;letter-spacing:-.02em;display:block}
+.q .l{font-size:13px;color:var(--muted)}.q.out .n,.q.out .l{color:var(--flag)}
+.scale{position:relative;height:64px;margin-top:6px}
+.axis{position:absolute;left:0;right:0;top:34px;height:1px;background:var(--rule)}
+.rangeband{position:absolute;top:22px;height:25px;background:var(--band);border-left:2px solid var(--accent);border-right:2px solid var(--accent);transform:scaleX(0);transform-origin:left center;animation:grow .7s cubic-bezier(.22,.7,.3,1) .25s forwards}
+@keyframes grow{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){.rangeband{animation:none;transform:scaleX(1)}}
+.tick{position:absolute;top:16px;width:2px;height:37px;background:var(--ink)}
+.tick.bad{background:var(--flag);height:44px;top:12px}
+.tlabel{position:absolute;top:0;font-size:12px;color:var(--muted);transform:translateX(-50%);white-space:nowrap}
+.rlabel{position:absolute;top:52px;font-size:13px;color:var(--accent);font-weight:600}
+.verdict{font-size:16.5px;margin:22px 0 0;max-width:58ch;padding:14px 16px;background:var(--field);border-left:3px solid var(--accent);border-radius:0 8px 8px 0}.verdict b{font-weight:700}
+.cta{margin:auto 0 0;padding:28px 26px;background:var(--card);border:2px solid var(--accent);border-radius:14px}
+.cta-label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+form{display:flex;flex-wrap:wrap;gap:10px;max-width:520px}
+input[type=email]{flex:1 1 240px;padding:14px 16px;font:inherit;font-size:16px;color:var(--ink);background:var(--field);border:1px solid var(--rule);border-radius:8px}
+input[type=email]:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+input[type=email].invalid{border-color:var(--flag)}
+.err{display:none;color:var(--flag);font-size:13.5px;font-weight:600;margin:9px 0 0}
+button{padding:14px 24px;font:inherit;font-size:16px;font-weight:700;cursor:pointer;background:var(--accent);color:var(--paper);border:none;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.14);transition:transform .15s ease,box-shadow .15s ease}
+button:hover{transform:translateY(-1px);box-shadow:0 4px 11px rgba(0,0,0,.18)}
+button:active{transform:translateY(0)}
+button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.price{font-size:15px;color:var(--muted);margin:14px 0 0}
+.price-chip{display:inline-block;background:var(--field);color:var(--ink);font-weight:700;padding:2px 9px;border-radius:6px;margin-right:5px;border:1px solid var(--rule)}
+.ok{display:none;font-size:16px;color:var(--accent);font-weight:600;margin-top:14px}
+section{border-top:1px solid var(--rule);padding:42px 0}
+h3{font-size:21px;font-weight:700;letter-spacing:-.012em;margin:0 0 16px;display:flex;align-items:center;gap:10px}
+h3::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+p{max-width:62ch}.muted{color:var(--muted)}
+ol{counter-reset:s;list-style:none;padding:0;margin:0;max-width:60ch;position:relative}
+ol::before{content:'';position:absolute;left:11px;top:12px;bottom:12px;width:2px;background:var(--rule)}
+ol li{counter-increment:s;position:relative;padding-left:38px;margin-bottom:20px}
+ol li:last-child{margin-bottom:0}
+ol li::before{content:counter(s);position:absolute;left:0;top:1px;width:24px;height:24px;border:1px solid var(--rule);border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:600;color:var(--muted);background:var(--paper);z-index:1}
+.line{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:11px 0;border-bottom:1px solid var(--rule);font-size:16px}
+.line:last-child{border-bottom:none}.line .v{font-weight:600;white-space:nowrap;text-align:right}
+.line .v.over{color:var(--flag)}.line .v.gap{color:var(--flag)}
+footer{border-top:1px solid var(--rule);padding:26px 0 46px;font-size:14px;color:var(--muted);display:flex;align-items:flex-start;gap:9px}
+footer::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;margin-top:7px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease-out,transform .55s ease-out}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.load-in{opacity:0;transform:translateY(14px);animation:fadeUp .6s ease-out forwards}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.load-in.d1{animation-delay:.05s}.load-in.d2{animation-delay:.15s}.load-in.d3{animation-delay:.25s}.load-in.d4{animation-delay:.36s}.load-in.d5{animation-delay:.46s}
+.spread,.cta{transition:transform .2s ease,box-shadow .2s ease}
+.spread:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.cta:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.07)}
+.icon-badge{transition:transform .25s ease}
+.markrow:hover .icon-badge{transform:rotate(-8deg) scale(1.07)}
+.trustbar div{transition:color .15s ease}
+.trustbar div:hover{color:var(--ink)}
+button{position:relative}
+button::after{content:'';position:absolute;inset:-4px;border-radius:11px;border:2px solid var(--accent);opacity:0;pointer-events:none;animation:pulse-ring 2.2s ease-out 1.1s 3}
+@keyframes pulse-ring{0%{opacity:.5;transform:scale(1)}70%{opacity:0;transform:scale(1.09)}100%{opacity:0;transform:scale(1.09)}}
+.illust-check{stroke-dasharray:34;stroke-dashoffset:34;animation:draw .5s ease-out .95s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.reveal .line,.reveal ol li{opacity:0;transform:translateY(10px);transition:opacity .5s ease-out,transform .5s ease-out}
+.reveal.is-visible .line,.reveal.is-visible ol li{opacity:1;transform:translateY(0)}
+.reveal .line:nth-child(2){transition-delay:.05s}.reveal .line:nth-child(3){transition-delay:.11s}.reveal .line:nth-child(4){transition-delay:.17s}.reveal .line:nth-child(5){transition-delay:.23s}.reveal .line:nth-child(6){transition-delay:.29s}
+.reveal ol li:nth-child(1){transition-delay:.05s}.reveal ol li:nth-child(2){transition-delay:.14s}.reveal ol li:nth-child(3){transition-delay:.23s}
+.hero-right{position:relative}
+.hero-right::before{content:'';position:absolute;top:-30px;right:-40px;width:260px;height:260px;background:radial-gradient(circle,var(--accent) 0%,transparent 72%);opacity:.1;filter:blur(28px);z-index:-1;pointer-events:none}
+.badge-check{display:flex;justify-content:center;margin-bottom:24px}
+.badge-check svg{width:164px;height:164px}
+.bc-bg{fill:var(--card)}
+.bc-ring{fill:none;stroke:var(--accent);stroke-width:3;stroke-dasharray:6 5;transform-box:fill-box;transform-origin:center;animation:spin 16s linear infinite}
+.bc-check{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:36;stroke-dashoffset:36;animation:draw .5s ease-out .55s forwards}
+@keyframes spin{to{transform:rotate(360deg)}}
+.trustbar div{opacity:0;animation:popIn .4s ease-out forwards}
+.trustbar div:nth-child(1){animation-delay:.55s}.trustbar div:nth-child(2){animation-delay:.63s}.trustbar div:nth-child(3){animation-delay:.71s}
+@keyframes popIn{from{opacity:0;transform:translateY(6px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+.step-icon{display:inline-flex;width:19px;height:19px;color:var(--accent);vertical-align:-4px;margin-right:7px;flex:none}
+.tick.bad{position:relative}
+.tick.bad::after{content:'';position:absolute;left:50%;top:50%;width:10px;height:10px;border-radius:50%;background:var(--flag);opacity:.5;transform:translate(-50%,-50%);animation:tick-pulse 1.9s ease-out 1.5s 3}
+@keyframes tick-pulse{0%{transform:translate(-50%,-50%) scale(1);opacity:.45}70%{transform:translate(-50%,-50%) scale(2.8);opacity:0}100%{opacity:0}}
+.ok{align-items:center;gap:7px}
+.ok-check{flex:none}
+.ok-check path{stroke-dasharray:26;stroke-dashoffset:26;animation:draw .4s ease-out .1s forwards}
+.final-cta{background:var(--card);border-top:1px solid var(--rule);padding:48px 24px;text-align:center}
+.final-cta-inner{max-width:480px;margin:0 auto}
+.final-cta h3{justify-content:center;margin:0 0 18px}
+.final-cta h3::before{content:none}
+.final-cta form{margin:0 auto;justify-content:center}
+.final-cta .err{text-align:left}
+.final-cta .ok{justify-content:center}
+.footer-region{background:var(--band);border-top:1px solid var(--rule)}
+.footer-block{max-width:1400px;margin:0 auto;padding:32px 24px}
+.footer-block+.footer-block{border-top:1px solid var(--rule)}
+.footer-block h3{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;display:block}
+.footer-block h3::before{content:none}
+.footer-block p{max-width:none;font-size:15.5px;color:var(--muted);line-height:1.65;margin:0}
+.founder{display:flex;gap:14px;align-items:flex-start}
+.founder p{padding-top:2px;flex:1;max-width:none}
+.founder .mark-dot{width:30px;height:30px;border-radius:50%;background:var(--field);color:var(--accent);display:flex;align-items:center;justify-content:center;flex:none;font-weight:700;font-size:13px;margin-top:2px}
+footer.footer-block{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--muted);border-top-color:var(--rule)}
+footer.footer-block::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none;margin-top:6px}
+@media (min-width:760px){.footer-block{padding:40px 48px}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.load-in{animation:none;opacity:1;transform:none}button::after{animation:none;display:none}.illust-check{stroke-dashoffset:0;animation:none}.reveal .line,.reveal ol li{opacity:1;transform:none;transition:none}.trustbar div{opacity:1;animation:none}.tick.bad::after{animation:none;display:none}.ok-check path{stroke-dashoffset:0;animation:none}.bc-ring{animation:none}.bc-check{animation:none;stroke-dashoffset:0}}</style></head><body>
+<div class="hero-wrap">
+<header class="load-in d1"><div class="markrow"><span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 12l2 2 4-4"/></svg></span><div class="mark">Quote<span>Check</span></div></div></header>
+<p class="eyebrow load-in d2">QUOTE BENCHMARK REPORT</p>
+<h1 class="load-in d3">Built on county permit records, not national averages</h1>
+<p class="sub load-in d3">Every permit carries a declared project valuation. We turn thousands of them into your local range.</p>
+<div class="hero-grid">
+<div class="hero-left load-in d4">
+<div class="badge-check" aria-hidden="true"><svg viewBox="0 0 100 100">
+<circle class="bc-bg" cx="50" cy="50" r="46"/>
+<circle class="bc-ring" cx="50" cy="50" r="30"/>
+<path class="bc-check" d="M36 51l10 10 20-20"/>
+</svg></div>
+<div class="trustbar"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span>Report in about an hour</span></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span>No contractor referral fees</span></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg><span>Built on public permit records</span></div></div>
+<div class="cta"><p class="cta-label">Start your report</p><form id="f" novalidate>
+<input type="email" id="e" placeholder="you@email.com" aria-label="Email address" aria-describedby="err" required>
+<button type="submit">See my local range</button></form>
+<p class="err" id="err" role="alert">Please enter a valid email address.</p>
+<p class="price"><span class="price-chip">$39</span>for your first project report &middot; Cancel any time.</p>
+<p class="ok" id="ok"><svg class="ok-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>Thanks &mdash; we&rsquo;ll email you when your county is live.</p></div>
+</div>
+<div class="hero-right load-in d5">
+<div class="illustration" aria-hidden="true"><svg viewBox="0 0 200 200">
+<circle class="illust-bg" cx="100" cy="100" r="96"/>
+<rect class="illust-tab" x="80" y="28" width="24" height="16" rx="4"/>
+<rect class="illust-doc" x="52" y="38" width="80" height="108" rx="10"/>
+<line class="illust-line" x1="66" y1="70" x2="118" y2="70"/>
+<line class="illust-line" x1="66" y1="86" x2="118" y2="86"/>
+<line class="illust-line" x1="66" y1="102" x2="100" y2="102"/>
+<line class="illust-handle" x1="145" y1="141" x2="163" y2="159"/>
+<circle class="illust-glass" cx="126" cy="122" r="26"/>
+<path class="illust-check" d="M114 122l8 8 16-16"/>
+</svg></div>
+<div class="spread"><span class="sample-tag">Sample report</span><h2>Kitchen remodel &middot; 210 sq ft &middot; Wake County, NC</h2>
+<div class="quotes"><div class="q"><span class="n">$38,400</span><span class="l">Quote A</span></div>
+<div class="q"><span class="n">$52,900</span><span class="l">Quote B</span></div>
+<div class="q out"><span class="n">$78,200</span><span class="l">Quote C</span></div></div>
+<div class="scale" role="img" aria-label="Quote A at 38,400 dollars sits below the typical permitted range of 41,000 to 56,000 dollars. Quote B at 52,900 falls inside it. Quote C at 78,200 sits far above it.">
+<div class="axis"></div><div class="rangeband" style="left:14%;width:38%"></div>
+<div class="tick" style="left:8%"></div><div class="tlabel" style="left:8%">A</div>
+<div class="tick" style="left:38%"></div><div class="tlabel" style="left:38%">B</div>
+<div class="tick bad" style="left:83%"></div><div class="tlabel" style="left:83%">C</div>
+<div class="rlabel" style="left:14%">Typical permitted range &middot; $41,000&ndash;$56,000</div></div>
+<p class="verdict">Quote C is <b>39% above</b> the top of the range for this scope in your county. Quote A is under it &mdash; which usually means something is missing from the scope, not that it is a bargain.</p></div>
+</div>
+</div>
+</div>
+<div class="wrap">
+<section class="reveal"><h3>What the report tells you</h3>
+<div class="line"><span>Demolition and disposal</span><span class="v">In range</span></div>
+<div class="line"><span>Cabinetry and installation</span><span class="v over">62% over typical</span></div>
+<div class="line"><span>Electrical rough-in and fixtures</span><span class="v">In range</span></div>
+<div class="line"><span>Plumbing relocation</span><span class="v over">28% over typical</span></div>
+<div class="line"><span>Permits and inspection fees</span><span class="v over">Missing from Quote A</span></div>
+<p class="muted" style="margin-top:18px">You get the range, the line items driving the difference, and the questions worth asking each contractor before you sign.</p></section>
+<section class="reveal"><h3>How it works</h3><ol>
+<li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><path d="M8 7l4-4 4 4"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></span>Upload your quotes as photos or PDFs, and tell us your address.</li>
+<li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg></span>We pull permitted project valuations for comparable work in your county and normalise them to your scope and square footage.</li>
+<li><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 12l2 2 4-4"/></svg></span>You get a report in about an hour showing where each quote sits and which line items drive the spread.</li>
+</ol></section>
+</div>
+<div class="final-cta reveal"><div class="final-cta-inner">
+<h3>Ready to see where your quote stands?</h3>
+<form id="f2" novalidate>
+<input type="email" id="e2" placeholder="you@email.com" aria-label="Email address" aria-describedby="err2" required>
+<button type="submit">See my local range</button></form>
+<p class="err" id="err2" role="alert">Please enter a valid email address.</p>
+<p class="price"><span class="price-chip">$39</span>for your first project report &middot; Cancel any time.</p>
+<p class="ok" id="ok2"><svg class="ok-check" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>Thanks &mdash; we&rsquo;ll email you when your county is live.</p>
+</div></div>
+<div class="footer-region reveal">
+<div class="footer-block"><h3>Why we built this</h3>
+<div class="founder"><span class="mark-dot" aria-hidden="true">&hearts;</span><p>A friend of ours got a bathroom remodel quote, had no real way to tell if it was fair, and signed it anyway &mdash; because who has time to call five more contractors just to compare notes? Months later we found out permitted projects with the same scope, in her own county, had cost 30% less. That number was sitting in public records the whole time; she just had no way to see it. We built QuoteCheck so nobody has to take a quote on faith &mdash; no sales calls, no contractor kickbacks, just the numbers you need before you sign.</p></div></div>
+<div class="footer-block"><h3>What this is not</h3>
+<p>We are not contractors and we do not take referral fees from any of them &mdash; nobody pays us to steer you. Permit valuations are a strong signal of real project cost, but they are a benchmark rather than a bid, and they cannot see the condition behind your walls. Use the report to ask better questions, not to replace your own judgement.</p></div>
+<footer class="footer-block">QuoteCheck &middot; Built on public county building permit records &middot; Variant 19</footer>
+</div>
+<script>
+(function(){
+var EMAIL_RE=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function wireForm(formId,inputId,errId,okId){
+  var form=document.getElementById(formId),input=document.getElementById(inputId),
+      err=document.getElementById(errId),ok=document.getElementById(okId);
+  if(!form)return;
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var v=input.value.trim();
+    if(!EMAIL_RE.test(v)){
+      input.classList.add('invalid');
+      input.setAttribute('aria-invalid','true');
+      err.style.display='block';
+      input.focus();
+      return;
+    }
+    input.classList.remove('invalid');
+    input.removeAttribute('aria-invalid');
+    err.style.display='none';
+    if(SHEETS_WEBHOOK_URL && SHEETS_WEBHOOK_URL.indexOf('PASTE_YOUR')===-1){
+      fetch(SHEETS_WEBHOOK_URL,{method:'POST',mode:'no-cors',body:new URLSearchParams({
+        email:v, page:location.pathname, form:formId, referrer:document.referrer
+      })}).catch(function(){});
+    }
+    if(typeof gtag==='function' && GOOGLE_ADS_ID.indexOf('REPLACE_ME')===-1 && CONVERSION_LABEL.indexOf('REPLACE_ME')===-1){
+      gtag('event','conversion',{'send_to':GOOGLE_ADS_ID+'/'+CONVERSION_LABEL});
+    }
+    form.style.display='none';
+    ok.style.display='flex';
+  });
+  input.addEventListener('input',function(){
+    if(err.style.display==='block'){
+      err.style.display='none';
+      input.classList.remove('invalid');
+      input.removeAttribute('aria-invalid');
+    }
+  });
+}
+wireForm('f','e','err','ok');
+wireForm('f2','e2','err2','ok2');
+})();
+
+(function(){
+var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var els = document.querySelectorAll('.reveal');
+if(reduced || !('IntersectionObserver' in window)){
+  els.forEach(function(e){e.classList.add('is-visible');});
+  return;
+}
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}
+  });
+},{threshold:0.12});
+els.forEach(function(e){io.observe(e);});
+})();
+
+(function(){
+var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function countUp(el, dur){
+  var raw = el.textContent.trim();
+  var m = raw.match(/[\d,]+/);
+  if(!m) return;
+  var target = parseInt(m[0].replace(/,/g,''),10);
+  var prefix = raw.slice(0, m.index), suffix = raw.slice(m.index + m[0].length);
+  if(reduced){el.textContent = prefix+target.toLocaleString()+suffix;return;}
+  var start=null;
+  function step(ts){
+    if(!start)start=ts;
+    var p=Math.min((ts-start)/dur,1);
+    var eased=1-Math.pow(1-p,3);
+    el.textContent = prefix+Math.round(target*eased).toLocaleString()+suffix;
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+document.querySelectorAll('.q .n').forEach(function(el,i){
+  setTimeout(function(){countUp(el,900);}, 420+i*80);
+});
+})();
+</script>
+</body></html>
